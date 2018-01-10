@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+<div class = 'js-app'></div>
+
+	<script>
+
+		let span = document.createElement('span');
+		let div = document.body.querySelector('.js-app');
+		div.append(span);
+
+		let id = setInterval(function(){
+		    let text = "";
+		    let digits_9 = "123456789";
+		    let digits_10 = "1234567890";
+
+		    text = digits_9.charAt(Math.floor(Math.random() * digits_9.length));
+
+		    for( let i=0; i < 9; i++ ){
+		        text += digits_10.charAt(Math.floor(Math.random() * digits_10.length));
+		    }
+
+		   span.textContent = text;
+
+		},100);
+
+		setTimeout(()=>{clearInterval(id)},2000);
+
+	</script>
+ 
+</body>
+
+</html>
+
